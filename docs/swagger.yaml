@@ -1,0 +1,110 @@
+definitions:
+  model.TodoList:
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a sample
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Swagger Todolist API
+  version: "1.0"
+paths:
+  /todo:
+    delete:
+      consumes:
+      - application/json
+      description: 删除TodoList
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.TodoList'
+            type: array
+      summary: 删除TodoList
+      tags:
+      - deletetodolist
+    post:
+      consumes:
+      - application/json
+      description: 创建TodoList
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.TodoList'
+            type: array
+      summary: 创建TodoList
+      tags:
+      - createtodolist
+  /todolists:
+    get:
+      consumes:
+      - application/json
+      description: 获取所有TodoList
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.TodoList'
+            type: array
+      summary: 获取所有TodoList
+      tags:
+      - gettodolist
+  /updatetodo:
+    post:
+      consumes:
+      - application/json
+      description: 更新TodoList
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.TodoList'
+            type: array
+      summary: 更新TodoList
+      tags:
+      - updatetodolist
+  /user:
+    delete:
+      consumes:
+      - application/json
+      description: 删除User
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: 删除User
+      tags:
+      - createuser
+    post:
+      consumes:
+      - application/json
+      description: 创建或更新User
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: 创建或更新User
+      tags:
+      - createuser
+swagger: "2.0"

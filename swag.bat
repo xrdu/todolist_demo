@@ -1,0 +1,1 @@
+swag.exe init -d ./cmd -o ./docs --parseDependency
